@@ -1,0 +1,149 @@
+--- Primary Layer Baseline ---
+KNN - Accuracy: 0.9961, APFD: 0.5057
+Decision Tree - Accuracy: 0.9963, APFD: 0.5076
+Random Forest - Accuracy: 0.9960, APFD: 0.5051
+SVM - Accuracy: 0.9980, APFD: 0.5052
+
+--- Primary Layer Optimized ---
+KNN - Accuracy: 0.9964, APFD: 0.5052
+Decision Tree - Accuracy: 0.9968, APFD: 0.5048
+Random Forest - Accuracy: 0.9960, APFD: 0.5050, Feature Importances: [0.03137362387880718, 0.0, 0.9594423451037911, 0.00918403101740178]      
+SVM - Accuracy: 0.9980, APFD: 0.5052
+
+Secondary layer results:
+
+--- Baseline (K-Means) ---
+APFD: 0.1142
+Execution Time: 0.4405s
+Cost per Fault Detected: 0.0000
+Number of Clusters: 2
+CFD Summary:
+  25%: 0.01
+  50%: 0.01
+  75%: 0.01
+  100%: 1.0
+
+--- Optimized (K-Means) ---
+APFD: 0.1142
+Execution Time: 358.6638s
+Cost per Fault Detected: 0.0262
+Number of Clusters: 4
+CFD Summary:
+  25%: 0.24
+  50%: 0.56
+  75%: 0.68
+  100%: 1.0
+
+
+--- Baseline (Q-Learning) ---
+APFD: 0.4918
+Execution Time: 1146.3842s
+Cost per Fault Detected: 0.0838
+CFD Summary:
+  25%: 0.23
+  50%: 0.49
+  75%: 0.75
+  100%: 1.0
+
+
+--- Optimized (Q-Learning) ---
+APFD: 0.4806
+Execution Time: 24989.5763s
+Cost per Fault Detected: 1.8275
+CFD Summary:
+  25%: 0.21
+  50%: 0.47
+  75%: 0.76
+  100%: 1.0
+
+
+
+
+--- Framework 1: Hybrid (KNN + SVM) with Optimized K-Means ---
+Primary Layer:
+  KNN Accuracy: 0.9965
+  SVM Accuracy: 0.9980
+  Hybrid Accuracy: 0.9971
+  APFD: 0.5049
+
+Secondary Layer:
+  Accuracy: 0.9980
+  Best K: 4
+  Silhouette Score: 0.6836
+
+--- Final Framework 1 Results---
+
+ Final APFD: 0.4246
+ Final Accuracy: 0.9975
+
+Top 10 Final Rankings:
+[910, 913, 914, 916, 918, 922, 929, 930, 931, 932]
+
+
+--- Framework 2: Hybrid (KNN + SVM) with Q-Learning ---
+
+Primary Layer:
+  KNN Accuracy: 0.9965
+  SVM Accuracy: 0.9980
+  Hybrid Accuracy: 0.9971
+  APFD: 0.5049
+
+Secondary Layer:
+  Accuracy: 0.6927
+  Parameters:
+    alpha: 0.01
+    gamma: 0.8
+    epsilon_decay: 0.9995
+
+Final Framework 2 Results:
+  Accuracy: 0.8086
+  APFD: 0.9917
+
+Top 10 Final Rankings:
+[22202, 59754, 60982, 63008, 19757, 53632, 39594, 52031, 24886, 42675]
+
+--- Framework 3: Multi-Objective Optimization with Optimized K-Means ---
+
+Primary Layer:
+  KNN Accuracy: 0.9965
+  SVM Accuracy: 0.9980
+  Hybrid Accuracy: 0.9968
+  APFD: 0.5049
+  KNN Best Params: {'metric': 'euclidean', 'n_neighbors': 10, 'weights': 'distance'}
+  SVM Best Params: {'C': 0.01, 'gamma': 0.1, 'kernel': 'rbf'}
+
+Secondary Layer:
+  Accuracy: 0.9980
+  Best K: 4
+  Silhouette Score: 0.6836
+
+Final Framework 3 Results:
+  Accuracy: 0.9974
+  APFD: 0.6457
+
+Top 10 Final Rankings:
+[910, 913, 914, 916, 918, 922, 929, 930, 931, 932]
+
+--- Framework 4: Multi-Objective Optimization with Q-learning ---
+
+Primary Layer:
+  KNN Accuracy: 0.9965
+  SVM Accuracy: 0.9980
+  Hybrid Accuracy: 0.9968
+  APFD: 0.5049
+  KNN Best Params: {'metric': 'euclidean', 'n_neighbors': 10, 'weights': 'distance'}
+  SVM Best Params: {'C': 0.01, 'gamma': 0.1, 'kernel': 'rbf'}
+
+Secondary Layer:
+  Accuracy: 0.6965
+  Parameters:
+    alpha: 0.0538298839476583
+    gamma: 0.9709342956091414
+    epsilon_decay: 0.9682454393655529
+
+Final Framework 4 Results:
+  Accuracy: 0.8141
+  APFD: 0.9771
+
+Top 10 Final Rankings:
+[8474, 8475, 8476, 8537, 8577, 8596, 8627, 8628, 8630, 8631]
