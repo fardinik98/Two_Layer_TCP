@@ -4,7 +4,6 @@ from sklearn.preprocessing import MinMaxScaler, LabelEncoder
 from imblearn.over_sampling import SMOTE
 
 def load_and_preprocess(file_path):
-    # Load the dataset
     data = pd.read_csv(file_path, delimiter=';')
 
     # Normalize numeric columns using MinMaxScaler

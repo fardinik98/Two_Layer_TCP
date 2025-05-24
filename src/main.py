@@ -29,7 +29,7 @@ def print_secondary_results(title, results):
     print(f"APFD: {results['APFD']:.4f}")
     print(f"Execution Time: {results['Execution_Time']:.4f}s")
     print(f"Cost per Fault Detected: {results['Cost_Per_Fault']:.4f}")
-    if "Number_of_Clusters" in results:  # Check if 'Number_of_Clusters' is in the results
+    if "Number_of_Clusters" in results:  
         print(f"Number of Clusters: {results['Number_of_Clusters']}")
     print("CFD Summary:")
     for key, value in results['CFD']['summary'].items():
@@ -69,75 +69,75 @@ if __name__ == "__main__":
     for title, results in secondary_evaluations.items():
         print_secondary_results(title, results)
 
-    # **Framework 1: Hybrid (KNN + SVM) with Optimized K-Means**
+    #**Framework 1: Hybrid (KNN + SVM) with Optimized K-Means**
     framework_1_results = svm_knn_km_framework(file_path)
 
     #Print Results for Framework 1
-    #print("\n--- Framework 1: Hybrid (KNN + SVM) with Optimized K-Means ---")
-    #print(f"Primary Layer:")
-    #print(f"  KNN Accuracy: {framework_1_results['Primary Layer']['KNN Accuracy']:.4f}")
-    #print(f"  SVM Accuracy: {framework_1_results['Primary Layer']['SVM Accuracy']:.4f}")
-    #print(f"  Hybrid Accuracy: {framework_1_results['Primary Layer']['Hybrid Accuracy']:.4f}")
-    #print(f"  APFD: {framework_1_results['Primary Layer']['APFD']:.4f}")
+    print("\n--- Framework 1: Hybrid (KNN + SVM) with Optimized K-Means ---")
+    print(f"Primary Layer:")
+    print(f"  KNN Accuracy: {framework_1_results['Primary Layer']['KNN Accuracy']:.4f}")
+    print(f"  SVM Accuracy: {framework_1_results['Primary Layer']['SVM Accuracy']:.4f}")
+    print(f"  Hybrid Accuracy: {framework_1_results['Primary Layer']['Hybrid Accuracy']:.4f}")
+    print(f"  APFD: {framework_1_results['Primary Layer']['APFD']:.4f}")
 
-    #print("\nSecondary Layer:")
-    #print(f"  Accuracy: {framework_1_results['Secondary Layer']['Accuracy']:.4f}")
-    #print(f"  Best K: {framework_1_results['Secondary Layer']['Best K']}")
-    #print(f"  Silhouette Score: {framework_1_results['Secondary Layer']['Silhouette Score']:.4f}")
+    print("\nSecondary Layer:")
+    print(f"  Accuracy: {framework_1_results['Secondary Layer']['Accuracy']:.4f}")
+    print(f"  Best K: {framework_1_results['Secondary Layer']['Best K']}")
+    print(f"  Silhouette Score: {framework_1_results['Secondary Layer']['Silhouette Score']:.4f}")
     
-    #print(f"\n--- Final Framework 1 Results---")
-    #print(f"\n Final APFD: {framework_1_results['Final Framework']['APFD']:.4f}")
-    #print(f" Final Accuracy: {framework_1_results['Final Framework']['Accuracy']:.4f}")
-    #print(f"\nTop 10 Final Rankings:")
-    #print(framework_1_results['Final Rankings'])
+    print(f"\n--- Final Framework 1 Results---")
+    print(f"\n Final APFD: {framework_1_results['Final Framework']['APFD']:.4f}")
+    print(f" Final Accuracy: {framework_1_results['Final Framework']['Accuracy']:.4f}")
+    print(f"\nTop 10 Final Rankings:")
+    print(framework_1_results['Final Rankings'])
     
     framework_2_results = knn_svm_q_framework(file_path)
 
-    # Print Framework 2 Results
-    #print("\n--- Framework 2: Hybrid (KNN + SVM) with Q-Learning ---")
-    #print("\nPrimary Layer:")
-    #print(f"  KNN Accuracy: {framework_2_results['Primary Layer']['KNN Accuracy']:.4f}")
-    #print(f"  SVM Accuracy: {framework_2_results['Primary Layer']['SVM Accuracy']:.4f}")
-    #print(f"  Hybrid Accuracy: {framework_2_results['Primary Layer']['Hybrid Accuracy']:.4f}")
-    #print(f"  APFD: {framework_2_results['Primary Layer']['APFD']:.4f}")
+    #Print Framework 2 Results
+    print("\n--- Framework 2: Hybrid (KNN + SVM) with Q-Learning ---")
+    print("\nPrimary Layer:")
+    print(f"  KNN Accuracy: {framework_2_results['Primary Layer']['KNN Accuracy']:.4f}")
+    print(f"  SVM Accuracy: {framework_2_results['Primary Layer']['SVM Accuracy']:.4f}")
+    print(f"  Hybrid Accuracy: {framework_2_results['Primary Layer']['Hybrid Accuracy']:.4f}")
+    print(f"  APFD: {framework_2_results['Primary Layer']['APFD']:.4f}")
 
-    #print("\nSecondary Layer:")
-    #print(f"  Accuracy: {framework_2_results['Secondary Layer']['Accuracy']:.4f}")
-    #print("  Parameters:")
-    #print(f"    alpha: {framework_2_results['Secondary Layer']['Parameters']['alpha']}")
-    #print(f"    gamma: {framework_2_results['Secondary Layer']['Parameters']['gamma']}")
-    #print(f"    epsilon_decay: {framework_2_results['Secondary Layer']['Parameters']['epsilon_decay']}")
+    print("\nSecondary Layer:")
+    print(f"  Accuracy: {framework_2_results['Secondary Layer']['Accuracy']:.4f}")
+    print("  Parameters:")
+    print(f"    alpha: {framework_2_results['Secondary Layer']['Parameters']['alpha']}")
+    print(f"    gamma: {framework_2_results['Secondary Layer']['Parameters']['gamma']}")
+    print(f"    epsilon_decay: {framework_2_results['Secondary Layer']['Parameters']['epsilon_decay']}")
 
-    #print("\nFinal Framework 2 Results:")
-    #print(f"  Accuracy: {framework_2_results['Final Framework']['Accuracy']:.4f}")
-    #print(f"  APFD: {framework_2_results['Final Framework']['APFD']:.4f}")
+    print("\nFinal Framework 2 Results:")
+    print(f"  Accuracy: {framework_2_results['Final Framework']['Accuracy']:.4f}")
+    print(f"  APFD: {framework_2_results['Final Framework']['APFD']:.4f}")
 
-    #print("\nTop 10 Final Rankings:")
-    #print(framework_2_results['Final Rankings'])
+    print("\nTop 10 Final Rankings:")
+    print(framework_2_results['Final Rankings'])
     
-    #framework_3_results = moo_km_framework(file_path)
+    framework_3_results = moo_km_framework(file_path)
 
-    # Print Results for Framework 3
-    #print("\n--- Framework 3: Multi-Objective Optimization with Optimized K-Means ---")
-    #print("\nPrimary Layer:")
-    #print(f"  KNN Accuracy: {framework_3_results['Primary Layer']['KNN Accuracy']:.4f}")
-    #print(f"  SVM Accuracy: {framework_3_results['Primary Layer']['SVM Accuracy']:.4f}")
-    #print(f"  Hybrid Accuracy: {framework_3_results['Primary Layer']['Hybrid Accuracy']:.4f}")
-    #print(f"  APFD: {framework_3_results['Primary Layer']['APFD']:.4f}")
-    #print(f"  KNN Best Params: {framework_3_results['Primary Layer']['KNN Best Params']}")
-    #print(f"  SVM Best Params: {framework_3_results['Primary Layer']['SVM Best Params']}")
+    #Print Results for Framework 3
+    print("\n--- Framework 3: Multi-Objective Optimization with Optimized K-Means ---")
+    print("\nPrimary Layer:")
+    print(f"  KNN Accuracy: {framework_3_results['Primary Layer']['KNN Accuracy']:.4f}")
+    print(f"  SVM Accuracy: {framework_3_results['Primary Layer']['SVM Accuracy']:.4f}")
+    print(f"  Hybrid Accuracy: {framework_3_results['Primary Layer']['Hybrid Accuracy']:.4f}")
+    print(f"  APFD: {framework_3_results['Primary Layer']['APFD']:.4f}")
+    print(f"  KNN Best Params: {framework_3_results['Primary Layer']['KNN Best Params']}")
+    print(f"  SVM Best Params: {framework_3_results['Primary Layer']['SVM Best Params']}")
 
-    #print("\nSecondary Layer:")
-    #print(f"  Accuracy: {framework_3_results['Secondary Layer']['Accuracy']:.4f}")
-    #print(f"  Best K: {framework_3_results['Secondary Layer']['Best K']}")
-    #print(f"  Silhouette Score: {framework_3_results['Secondary Layer']['Silhouette Score']:.4f}")
+    print("\nSecondary Layer:")
+    print(f"  Accuracy: {framework_3_results['Secondary Layer']['Accuracy']:.4f}")
+    print(f"  Best K: {framework_3_results['Secondary Layer']['Best K']}")
+    print(f"  Silhouette Score: {framework_3_results['Secondary Layer']['Silhouette Score']:.4f}")
 
-    #print("\nFinal Framework 3 Results:")
-    #print(f"  Accuracy: {framework_3_results['Final Framework']['Accuracy']:.4f}")
-    #print(f"  APFD: {framework_3_results['Final Framework']['APFD']:.4f}")
+    print("\nFinal Framework 3 Results:")
+    print(f"  Accuracy: {framework_3_results['Final Framework']['Accuracy']:.4f}")
+    print(f"  APFD: {framework_3_results['Final Framework']['APFD']:.4f}")
 
-    #print("\nTop 10 Final Rankings:")
-    #print(framework_3_results['Final Rankings'])
+    print("\nTop 10 Final Rankings:")
+    print(framework_3_results['Final Rankings'])
     
     framework_4_results = moo_q_framework(file_path)
     
